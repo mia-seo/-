@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import Game from "../../Components/Nav/Mainchild/Game";
-import Map from "../../Components/Nav/Mainchild/Map";
-import Party from "../../Components/Nav/Mainchild/Party";
+import Game from "../Game/Game";
+import Map from "../Map/Map";
+import Party from "../Party/Party";
 
 const Main = () => {
   const CategoriTab = styled.div`
