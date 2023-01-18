@@ -6,18 +6,23 @@ const Map = () => {
   return (
     <M.Container>
       <M.Fiter>
-        <input />
-        <button>검색</button>
-
+        <M.SearchBox>
+          <input />
+          <button>검색</button>
+        </M.SearchBox>
         <select>
           <option>중식</option>
           <option>한식</option>
+          <option>양식</option>
+          <option>중식</option>
         </select>
       </M.Fiter>
       <M.ContainerBox>
-        <M.Inner>지도에욤</M.Inner>
+        <M.Inner>
+          <img src="/images/map.png" alt="지도" />
+        </M.Inner>
         <M.List>
-          <M.Lists primary>
+          <M.Lists>
             <M.ItemImg src="/images/cake.jpg" />
             <M.ItemDec>
               <M.ItmeInfo primary>상호명 : 굽네치킨</M.ItmeInfo>
@@ -28,7 +33,7 @@ const Map = () => {
               <M.ItmeInfo>가격대 : 1만원 대</M.ItmeInfo>
             </M.ItemDec>
           </M.Lists>
-          <M.Lists>
+          <M.Lists primary>
             <M.ItemImg src="/images/cake.jpg" />
             <M.ItemDec>
               <M.ItmeInfo primary>상호명 : 굽네치킨</M.ItmeInfo>
@@ -38,7 +43,7 @@ const Map = () => {
               <M.ItmeInfo>카테고리 : 인스턴트</M.ItmeInfo>
             </M.ItemDec>
           </M.Lists>
-          <M.Lists primary>
+          <M.Lists>
             <M.ItemImg src="/images/cake.jpg" />
             <M.ItemDec>
               <M.ItmeInfo primary>상호명 : 굽네치킨</M.ItmeInfo>
