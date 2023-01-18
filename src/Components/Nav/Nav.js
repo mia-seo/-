@@ -36,7 +36,7 @@ function Nav() {
 
   return (
     <Nav>
-      <Logo>오점모</Logo>
+      <Logo>오점모?</Logo>
       <Login>로그인</Login>
     </Nav>
   );
