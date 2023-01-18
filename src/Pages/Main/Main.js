@@ -1,3 +1,4 @@
+<<<<<<< HEAD:src/pages/Main/Main.js
 import React, { useState } from "react";
 import { styled } from "styled-components";
 import Game from "../../Components/Nav/Mainchild/Game";
@@ -54,3 +55,12 @@ const MAIN_CHILD = {
   "맛집 지도": <Map />,
   "게 임": <Game />,
 };
+=======
+import React from "react";
+
+const Main = () => {
+  return <div />;
+};
+
+export default Main;
+>>>>>>> main:src/Pages/Main/Main.js
