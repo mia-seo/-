@@ -9,7 +9,6 @@ export default function Router() {
       <Nav />
       <Routes>
         <Route path="/" element={<Main />} />
-        <Route path="/Map" element={<Map />} />
       </Routes>
     </BrowserRouter>
   );
