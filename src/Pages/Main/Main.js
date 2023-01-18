@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import Game from "../../Components/Nav/Mainchild/Game";
-import Map from "../../Components/Nav/Mainchild/Map";
+import Map from "../../pages/Map/Map";
 import Party from "../../Components/Nav/Mainchild/Party";
 
 const Main = () => {

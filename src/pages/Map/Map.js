@@ -1,4 +1,5 @@
 import React from "react";
+import Location from "./Location";
 import * as M from "./Map.styles";
 import "../../styles/reset.css";
 
@@ -19,7 +20,7 @@ const Map = () => {
       </M.Fiter>
       <M.ContainerBox>
         <M.Inner>
-          <img src="/images/map.png" alt="지도" />
+          <Location />
         </M.Inner>
         <M.List>
           <M.Lists>
