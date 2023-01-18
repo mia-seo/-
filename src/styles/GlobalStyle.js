@@ -8,6 +8,10 @@ const GlobalStyle = createGlobalStyle`
   * {
     box-sizing: border-box;
   }
+  
+  body {
+    background-color:rgb(255,97,0,0.2);
+  }
 `;
 
 export default GlobalStyle;
