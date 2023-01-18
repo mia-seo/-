@@ -1,6 +1,5 @@
 import React from "react";
 import * as M from "./Map.styles";
-import "../../styles/reset.css";
 
 const Map = () => {
   return (
