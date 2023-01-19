@@ -5,7 +5,7 @@ export const Container = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 100vw;
+  width: 100%;
   height: 100vh;
   background-color: rgba(255, 97, 0, 0.2);
 `;
@@ -55,35 +55,41 @@ export const ContainerBox = styled.div`
 `;
 
 export const Inner = styled.div`
-  width: 500px;
+  width: 600px;
   height: 500px;
-  margin-right: 50px;
-  border-radius: 10px;
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  margin-right: 100px;
   overflow: hidden;
+  border-radius: 10px;
 `;
 
 export const List = styled.ul`
   width: 600px;
   height: 500px;
   overflow: scroll;
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  /* border: 1px solid rgba(0, 0, 0, 0.1); */
   border-radius: 10px;
+  &::-webkit-scrollbar {
+    display: none;
+  }
 `;
 
 export const Lists = styled.li`
   display: flex;
-  justify-content: space-around;
   align-items: center;
-  width: 600px;
+  width: 100%;
   height: 300px;
   background-color: ${props => (props.primary ? "tomato" : "white")};
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  &:hover {
+    cursor: pointer;
+    background-color: rgba(255, 97, 0, 0.3);
+  }
 `;
 
 export const ItemImg = styled.img`
   width: 200px;
   height: 200px;
+  margin-left: 30px;
 `;
 
 export const ItemDec = styled.div`
@@ -93,6 +99,7 @@ export const ItemDec = styled.div`
 `;
 
 export const ItmeInfo = styled.p`
+  margin-left: 10px;
   margin-bottom: 10px;
   font-size: ${props => (props.primary ? "30px" : "16px")};
 `;

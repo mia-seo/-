@@ -1,15 +1,15 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import Game from "../Game/Game";
-import Map from "../Map/Map";
-import Party from "../Party/Party";
+import Game from "../../Components/Nav/Mainchild/Game";
+import Map from "../../pages/Map/Map";
+import Party from "../../Components/Nav/Mainchild/Party";
+
 
 const Main = () => {
   const CategoriTab = styled.div`
     width: 90%;
     margin: 50px auto;
     font-size: 30px;
-    text-align: center;
     background-color: white;
     overflow-x: hidden;
   `;
