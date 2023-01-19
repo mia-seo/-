@@ -5,12 +5,14 @@ import "../../styles/reset.css";
 
 const Map = () => {
   const [items, setItems] = useState([]);
-  const [latitude, setLatitude] = useState();
-  const [longitude, setLongitude] = useState();
+  const [latitude, setLatitude] = useState(37.506307228504966);
+  const [longitude, setLongitude] = useState(127.05371643215041);
+  const [name, setName] = useState("");
 
-  const addMapPoint = (lat, lon) => {
+  const addMapPoint = (lat, lon, name) => {
     setLatitude(lat);
     setLongitude(lon);
+    setName(name);
   };
 
   useEffect(() => {
@@ -35,7 +37,7 @@ const Map = () => {
       </M.Fiter>
       <M.ContainerBox>
         <M.Inner>
-          <Location latitude={latitude} longitude={longitude} />
+          <Location latitude={latitude} longitude={longitude} name={name} />
         </M.Inner>
         <M.List>
           {items.map((i, index) => {
@@ -43,7 +45,7 @@ const Map = () => {
               <M.Lists
                 key={index}
                 data-latitude={i.latitude}
-                onClick={() => addMapPoint(i.latitude, i.longitude)}
+                onClick={() => addMapPoint(i.latitude, i.longitude, i.name)}
               >
                 <M.ItemImg src="/images/cake.jpg" />
                 <M.ItemDec>
