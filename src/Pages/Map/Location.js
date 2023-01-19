@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 
 const { kakao } = window;
 
-const Location = ({ longitude, latitude }) => {
+const Location = ({ longitude, latitude, name }) => {
   let imageSrc =
     "https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/markerStar.png";
 
@@ -24,7 +24,7 @@ const Location = ({ longitude, latitude }) => {
         latlng: new kakao.maps.LatLng(37.506307228504966, 127.05371643215041),
       },
       {
-        title: "옆가게",
+        title: name,
         latlng: new kakao.maps.LatLng(latitude, longitude),
       },
     ];
@@ -43,6 +43,18 @@ const Location = ({ longitude, latitude }) => {
         title: positions[i].title, // 마커의 타이틀, 마커에 마우스를 올리면 타이틀이 표시됩니다
         image: markerImage, // 마커 이미지
       });
+
+      let iwContent = `<div style="padding:10px; font-size :12px; font-weight : 700;">${
+          positions[i].title === "" ? "위코드" : positions[i].title
+        }</div>`, // 인포윈도우에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
+        iwPosition = new kakao.maps.LatLng(33.450701, 126.570667); //인포윈도우 표시 위치입니다
+
+      // 인포윈도우를 생성합니다
+      let infowindow = new kakao.maps.InfoWindow({
+        position: iwPosition,
+        content: iwContent,
+      });
+      infowindow.open(map, marker);
     }
   });
 
