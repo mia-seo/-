@@ -4,10 +4,19 @@ import * as M from "./Map.styles";
 import "../../styles/reset.css";
 
 const Map = () => {
+  const CATEGORYS = [
+    { name: "한식" },
+    { name: "중식" },
+    { name: "양식" },
+    { name: "일식" },
+    { name: "인스턴트" },
+  ];
   const [items, setItems] = useState([]);
+  const [category, setCategory] = useState("한식");
   const [latitude, setLatitude] = useState(37.506307228504966);
   const [longitude, setLongitude] = useState(127.05371643215041);
   const [name, setName] = useState("");
+
 
   const addMapPoint = (lat, lon, name) => {
     setLatitude(lat);
@@ -21,19 +30,28 @@ const Map = () => {
       .then(data => setItems(data));
   }, []);
 
+  const addCategory = cateName => {
+    setCategory(cateName);
+  };
+
   return (
     <M.Container>
       <M.Fiter>
-        <M.SearchBox>
-          <input />
-          <button>검색</button>
-        </M.SearchBox>
-        <select>
-          <option>중식</option>
-          <option>한식</option>
-          <option>양식</option>
-          <option>중식</option>
-        </select>
+        <div>
+          {CATEGORYS.map((i, index) => {
+            return (
+              <M.categoryButton
+                props={i.name}
+                key={index}
+                onClick={() => {
+                  addCategory(i.name);
+                }}
+              >
+                {i.name}
+              </M.categoryButton>
+            );
+          })}
+        </div>
       </M.Fiter>
       <M.ContainerBox>
         <M.Inner>
