@@ -1,9 +1,8 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import Game from "../../Components/Nav/Mainchild/Game";
+// import Game from "../../Components/Nav/Mainchild/Game";
 import Map from "../../pages/Map/Map";
-import Party from "../../Components/Nav/Mainchild/Party";
-
+// import Party from "../../Components/Nav/Mainchild/Party";
 
 const Main = () => {
   const CategoriTab = styled.div`
@@ -57,7 +56,7 @@ export default Main;
 const CATEGORI_BUTTON = ["파티원 구함", "맛집 지도", "게 임"];
 
 const MAIN_CHILD = {
-  "파티원 구함": <Party />,
+  // "파티원 구함": <Party />,
   "맛집 지도": <Map />,
-  "게 임": <Game />,
+  // "게 임": <Game />,
 };

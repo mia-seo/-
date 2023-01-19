@@ -50,10 +50,11 @@ const Location = ({ longitude, latitude }) => {
     <div
       style={{
         width: "100%",
+        height: "100px",
         display: "inline-block",
       }}
     >
-      <div id="map" style={{ width: "100%", height: "500px" }} />
+      <div id="map" style={{ width: "100%", height: "800px" }} />
     </div>
   );
 };
