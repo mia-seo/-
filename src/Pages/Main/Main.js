@@ -1,16 +1,18 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-// import Game from "../../Components/Nav/Mainchild/Game";
-import Map from "../../pages/Map/Map";
-// import Party from "../../Components/Nav/Mainchild/Party";
+import Party from "../Party/Party";
+import Map from "../Map/Map";
+import Game from "../Game/Game";
 
 const Main = () => {
-  const CategoriTab = styled.div`
+  const PartyTab = styled.div`
     width: 90%;
-    margin: 50px auto;
-    font-size: 30px;
+    margin: 30px auto;
     background-color: white;
-    overflow-x: hidden;
+  `;
+
+  const CategoriTab = styled(PartyTab)`
+    font-size: 30px;
   `;
 
   const Tab = styled.ul`
@@ -38,16 +40,18 @@ const Main = () => {
 
   const [categori, setCategori] = useState("파티원 구함");
   return (
-    <CategoriTab>
-      <Tab>
-        {CATEGORI_BUTTON.map((tab, idx) => (
-          <CategoriTabLi key={idx} onClick={() => setCategori(tab)}>
-            {tab}
-          </CategoriTabLi>
-        ))}
-      </Tab>
+    <PartyTab>
+      <CategoriTab>
+        <Tab>
+          {CATEGORI_BUTTON.map((tab, idx) => (
+            <CategoriTabLi key={idx} onClick={() => setCategori(tab)}>
+              {tab}
+            </CategoriTabLi>
+          ))}
+        </Tab>
+      </CategoriTab>
       <div>{MAIN_CHILD[categori]}</div>
-    </CategoriTab>
+    </PartyTab>
   );
 };
 
@@ -56,7 +60,7 @@ export default Main;
 const CATEGORI_BUTTON = ["파티원 구함", "맛집 지도", "게 임"];
 
 const MAIN_CHILD = {
-  // "파티원 구함": <Party />,
+  "파티원 구함": <Party />,
   "맛집 지도": <Map />,
-  // "게 임": <Game />,
+  "게 임": <Game />,
 };
