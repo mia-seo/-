@@ -9,6 +9,7 @@ function Nav() {
     align-items: center;
     height: 100px;
     background-color: white;
+    border-bottom: 1px solid black;
   `;
 
   const Logo = styled.div`
@@ -19,24 +20,24 @@ function Nav() {
   `;
 
   const Login = styled.button`
-  margin: auto 30px;
-  font-size: 26px;
-  border: none;
-  border-radius: 28px;
-  color: white;
-  background-color: #ff6347;
-  padding: 10px;
-
-  &:hover {
-    cursor: pointer;
-    background-color: white;
-    color: #ff6347;
-    border: 1px solid #ff6347;
+    margin: auto 30px;
+    font-size: 26px;
+    border: none;
+    border-radius: 28px;
+    color: white;
+    background-color: #ff6347;
+    padding: 10px;
+    &:hover {
+      cursor: pointer;
+      background-color: white;
+      color: #ff6347;
+      border: 1px solid #ff6347;
+    }
   `;
 
   return (
     <Nav>
-      <Logo>오점모?</Logo>
+      <Logo>오점모</Logo>
       <Login>로그인</Login>
     </Nav>
   );
