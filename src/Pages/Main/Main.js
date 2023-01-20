@@ -9,7 +9,6 @@ const Main = () => {
     width: 90%;
     margin: 50px auto;
     font-size: 30px;
-    text-align: center;
     background-color: white;
     overflow-x: hidden;
   `;
