@@ -1,58 +1,25 @@
 import React, { useState } from "react";
-import styled from "styled-components";
 import Game from "../Game/Game";
 import Map from "../Map/Map";
 import Party from "../Party/Party";
+import * as M from "./Main.styles";
 
-const MenuTab = styled.div`
-  width: 90%;
-  margin: 50px auto;
-  background-color: white;
-  overflow-x: hidden;
-`;
 const Main = () => {
-  const CategoriTab = styled(MenuTab)`
-    font-size: 30px;
-  `;
-
-  const Tab = styled.ul`
-    display: flex;
-  `;
-
-  const CategoriTabLi = styled.li`
-    margin: 10px;
-    width: 100%;
-    background-color: rgb(0, 0, 0, 0.1);
-    border: 1px solid rgb(0, 0, 0, 0.1);
-    border-radius: 10px;
-    color: rgb(0, 0, 0, 0.4);
-    text-align: center;
-    padding: 20px;
-    cursor: pointer;
-
-    &:hover {
-      background-color: rgb(255, 97, 0, 0.2);
-      border: 1px solid white;
-      border-radius: 10px;
-      color: white;
-    }
-  `;
-
   const [categori, setCategori] = useState("파티원 구함");
   return (
     <div>
-      <CategoriTab>
-        <Tab>
+      <M.CategoriTab>
+        <M.Tab>
           {CATEGORI_BUTTON.map((tab, idx) => (
-            <CategoriTabLi key={idx} onClick={() => setCategori(tab)}>
+            <M.CategoriTabLi key={idx} onClick={() => setCategori(tab)}>
               {tab}
-            </CategoriTabLi>
+            </M.CategoriTabLi>
           ))}
-        </Tab>
-      </CategoriTab>
-      <MenuTab>
+        </M.Tab>
+      </M.CategoriTab>
+      <M.MenuTab>
         <div>{MAIN_CHILD[categori]}</div>
-      </MenuTab>
+      </M.MenuTab>
     </div>
   );
 };

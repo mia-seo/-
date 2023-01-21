@@ -3,9 +3,13 @@
     "room_id": 1,
     "room_name": "중식 먹을 사람!",
     "user_id": [
-      { "id": 1, "nickname": "하평안" },
-      { "id": 2, "nickname": "홍길동" },
-      { "id": 3, "nickname": "wecode1234" }
+      { "id": 1, "nickname": "하평안", "user_profile_img": "./images/123.png" },
+      { "id": 2, "nickname": "홍길동", "user_profile_img": "./images/123.png" },
+      {
+        "id": 3,
+        "nickname": "wecode1234",
+        "user_profile_img": "./images/123.png"
+      }
     ],
     "map_categoris": "중식",
     "room_order_status_id": "주문 완료"
@@ -14,9 +18,9 @@
     "room_id": 2,
     "room_name": "일식 먹을 사람!",
     "user_id": [
-      { "id": 4, "nickname": "푸들" },
-      { "id": 5, "nickname": "벡엔드" },
-      { "id": 6, "nickname": "프론트" }
+      { "id": 4, "nickname": "푸들", "user_profile_img": "./images/123.png" },
+      { "id": 5, "nickname": "벡엔드", "user_profile_img": "./images/123.png" },
+      { "id": 6, "nickname": "프론트", "user_profile_img": "./images/123.png" }
     ],
     "map_categoris": "미정",
     "room_order_status_id": "주문 대기"
@@ -25,9 +29,21 @@
     "room_id": 3,
     "room_name": "한식 먹을 사람!",
     "user_id": [
-      { "id": 7, "nickname": "기업협업" },
-      { "id": 8, "nickname": "가기싫다" },
-      { "id": 9, "nickname": "취직할수 있을까" }
+      {
+        "id": 7,
+        "nickname": "기업협업",
+        "user_profile_img": "./images/123.png"
+      },
+      {
+        "id": 8,
+        "nickname": "가기싫다",
+        "user_profile_img": "./images/123.png"
+      },
+      {
+        "id": 9,
+        "nickname": "취직할수 있을까",
+        "user_profile_img": "./images/123.png"
+      }
     ],
     "map_categoris": "미정",
     "room_order_status_id": "주문 완료"
@@ -36,11 +52,23 @@
     "room_id": 4,
     "room_name": "멘토님과 같이 하는 식사",
     "user_id": [
-      { "id": 10, "nickname": "혼자해보는" },
-      { "id": 11, "nickname": "케러셀" },
-      { "id": 12, "nickname": "잘할 수 있을까?" },
-      { "id": 13, "nickname": "나는" },
-      { "id": 14, "nickname": "최고야" }
+      {
+        "id": 10,
+        "nickname": "혼자해보는",
+        "user_profile_img": "./images/123.png"
+      },
+      {
+        "id": 11,
+        "nickname": "케러셀",
+        "user_profile_img": "./images/123.png"
+      },
+      {
+        "id": 12,
+        "nickname": "잘할 수 있을까?",
+        "user_profile_img": "./images/123.png"
+      },
+      { "id": 13, "nickname": "나는", "user_profile_img": "./images/123.png" },
+      { "id": 14, "nickname": "최고야", "user_profile_img": "./images/123.png" }
     ],
     "map_categoris": "양식",
     "room_order_status_id": "결재중"

@@ -17,7 +17,10 @@ function EmptyCard({
       <E.RoomUsers>
         참가자 :
         {user_id.map(item => (
-          <E.RoomInfo>{item.nickname}</E.RoomInfo>
+          <E.RoomInfo key={item.room_id}>
+            <img src={item.user_profile_img} alt="img" />
+            {item.nickname}
+          </E.RoomInfo>
         ))}
       </E.RoomUsers>
     </E.Empty>

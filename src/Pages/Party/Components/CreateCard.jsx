@@ -3,9 +3,9 @@ import * as E from "./EmptyCard.styles";
 
 function CreateCard() {
   return (
-    <E.Empty>
-      <div>+</div>
-    </E.Empty>
+    <E.CraeteCard>
+      <E.CraeteButton>+</E.CraeteButton>
+    </E.CraeteCard>
   );
 }
 
