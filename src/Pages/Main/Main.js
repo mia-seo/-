@@ -50,7 +50,6 @@ const Main = () => {
           ))}
         </Tab>
       </CategoriTab>
-
       <MenuTab>
         <div>{MAIN_CHILD[categori]}</div>
       </MenuTab>

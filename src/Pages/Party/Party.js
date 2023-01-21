@@ -1,19 +1,26 @@
-import React from "react";
-import EmptyCard from "./Components/EmptyCard";
-import styled from "styled-components";
+import React, { useEffect, useState } from "react";
+import EmptyCard from "./components/EmptyCard";
+import * as P from "./Party.styles";
 
 function Party() {
-  const CardFlex = styled.div`
-    dispaly: flex;
-    justify-contents: center;
-    align-item: cemter;
-  `;
+  const [roomData, setRoomData] = useState([]);
+  useEffect(() => {
+    fetch("/data/roomdata.json")
+      .then(res => res.json())
+      .then(res => setRoomData(res));
+  }, []);
   return (
-    <div>
-      <EmptyCard />
-      <EmptyCard />
-      <EmptyCard />
-    </div>
+    <P.CardFlex>
+      {roomData.map(item => (
+        <EmptyCard
+          key={item.room_id}
+          room_name={item.room_name}
+          room_order_status_id={item.room_order_status_id}
+          user_id={item.user_id}
+          map_categoris={item.map_categoris}
+        />
+      ))}
+    </P.CardFlex>
   );
 }
 

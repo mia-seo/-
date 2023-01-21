@@ -1,28 +1,30 @@
 import React from "react";
-import styled from "styled-components";
+import * as E from "./EmptyCard.styles";
 
-function EmptyCard() {
-  const Empty = styled.div`
-    margin: 10px;
-    width: 30%;
-    height: 400px;
-    background-color: rgb(255, 97, 0, 0.2);
-    border: 1px solid rgb(255, 97, 0, 0.2);
-    border-radius: 10px;
-  `;
+function EmptyCard({
+  room_id,
+  room_name,
+  room_order_status_id,
+  user_id,
+  map_categoris,
+}) {
+  console.log(user_id);
   return (
-    <Empty>
-      <div>제목 : </div>
-      <div>인원수 : </div>
-      <div>
-        카테고리 :
-        <select>
-          <option>중식</option>
-          <option>일식</option>
-        </select>
-      </div>
-      <div>참가자 : </div>
-    </Empty>
+    <E.Empty key={room_id}>
+      <E.RoomInfo>제목 : {room_name}</E.RoomInfo>
+      <E.RoomInfo>인원수 :{user_id.length}명</E.RoomInfo>
+      <E.RoomInfo>주문상태 : {room_order_status_id}</E.RoomInfo>
+      <E.RoomInfo>카테고리 : {map_categoris}</E.RoomInfo>
+      <E.RoomUsers>
+        참가자 :
+        {user_id.map(item => (
+          <E.RoomInfo>{item.nickname}</E.RoomInfo>
+        ))}
+        {user_id.map(item => (
+          <E.RoomInfo>{item.nickname}</E.RoomInfo>
+        ))}
+      </E.RoomUsers>
+    </E.Empty>
   );
 }
 
