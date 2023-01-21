@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Empty = styled.div`
   margin: 10px;
-  width: 33%;
+  width: 32%;
   height: 400px;
   background-color: rgb(255, 97, 0, 0.2);
   border: 1px solid rgb(255, 97, 0, 0.2);

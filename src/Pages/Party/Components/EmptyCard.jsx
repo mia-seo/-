@@ -8,7 +8,6 @@ function EmptyCard({
   user_id,
   map_categoris,
 }) {
-  console.log(user_id);
   return (
     <E.Empty key={room_id}>
       <E.RoomInfo>제목 : {room_name}</E.RoomInfo>
@@ -17,9 +16,6 @@ function EmptyCard({
       <E.RoomInfo>카테고리 : {map_categoris}</E.RoomInfo>
       <E.RoomUsers>
         참가자 :
-        {user_id.map(item => (
-          <E.RoomInfo>{item.nickname}</E.RoomInfo>
-        ))}
         {user_id.map(item => (
           <E.RoomInfo>{item.nickname}</E.RoomInfo>
         ))}

@@ -1,14 +1,17 @@
 import React, { useEffect, useState } from "react";
 import EmptyCard from "./components/EmptyCard";
+import CreateCard from "./components/CreateCard";
 import * as P from "./Party.styles";
 
 function Party() {
   const [roomData, setRoomData] = useState([]);
+
   useEffect(() => {
     fetch("/data/roomdata.json")
       .then(res => res.json())
       .then(res => setRoomData(res));
   }, []);
+
   return (
     <P.CardFlex>
       {roomData.map(item => (
@@ -20,6 +23,7 @@ function Party() {
           map_categoris={item.map_categoris}
         />
       ))}
+      <CreateCard />
     </P.CardFlex>
   );
 }
