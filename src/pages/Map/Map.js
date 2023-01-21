@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Location from "./Location";
 import * as M from "./Map.styles";
-import "../../styles/reset.css";
 
 const Map = () => {
   const [items, setItems] = useState([]);
