@@ -1,17 +1,17 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import Party from "../Party/Party";
-import Map from "../Map/Map";
 import Game from "../Game/Game";
+import Map from "../Map/Map";
+import Party from "../Party/Party";
 
+const MenuTab = styled.div`
+  width: 90%;
+  margin: 50px auto;
+  background-color: white;
+  overflow-x: hidden;
+`;
 const Main = () => {
-  const PartyTab = styled.div`
-    width: 90%;
-    margin: 30px auto;
-    background-color: white;
-  `;
-
-  const CategoriTab = styled(PartyTab)`
+  const CategoriTab = styled(MenuTab)`
     font-size: 30px;
   `;
 
@@ -40,7 +40,7 @@ const Main = () => {
 
   const [categori, setCategori] = useState("파티원 구함");
   return (
-    <PartyTab>
+    <div>
       <CategoriTab>
         <Tab>
           {CATEGORI_BUTTON.map((tab, idx) => (
@@ -50,8 +50,11 @@ const Main = () => {
           ))}
         </Tab>
       </CategoriTab>
-      <div>{MAIN_CHILD[categori]}</div>
-    </PartyTab>
+
+      <MenuTab>
+        <div>{MAIN_CHILD[categori]}</div>
+      </MenuTab>
+    </div>
   );
 };
 
