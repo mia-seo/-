@@ -3,6 +3,7 @@ import styled from "styled-components";
 export const Title = styled.form`
   ${props => props.theme.variables.wh("90vw", "10vh")}
   ${props => props.theme.variables.flex(null, "space-between", "center")}
+  margin-top: 20px;
   color: ${props => props.theme.style.tomato};
   font-size: 30px;
   font-weight: bolder;
