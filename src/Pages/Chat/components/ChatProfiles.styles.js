@@ -3,8 +3,6 @@ import styled from "styled-components";
 export const Profiles = styled.div`
   ${props => props.theme.variables.wh("90vw", "30vh")};
   ${props => props.theme.variables.flex("", "", "")};
-  /* ${props => props.theme.style.radius};
-  background-color: white; */
   gap: 10px;
 `;
 
@@ -21,7 +19,6 @@ export const Profile = styled.div`
   }
 
   div {
-    /* ${props => props.theme.variables.wh("10vw", "10vh")}; */
     font-size: 20px;
     font-weight: bold;
     margin-bottom: 15px;

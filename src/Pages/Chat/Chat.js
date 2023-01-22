@@ -4,7 +4,7 @@ import ChatTitle from "./components/ChatTitle";
 import ChatProfiles from "./components/ChatProfiles";
 import Chatting from "./components/Chatting";
 
-const Chat = () => {
+function Chat() {
   return (
     <C.Container>
       <ChatTitle />
@@ -12,6 +12,6 @@ const Chat = () => {
       <Chatting />
     </C.Container>
   );
-};
+}
 
 export default Chat;

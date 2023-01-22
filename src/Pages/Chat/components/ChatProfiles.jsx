@@ -3,7 +3,7 @@ import * as P from "./ChatProfiles.styles";
 import "./ChatProfiles.styles";
 
 const ChatProfiles = () => {
-  const [profiles, setProfiles] = useState();
+  const [profiles, setProfiles] = useState([]);
 
   useEffect(() => {
     fetch("/Data/profiles.json")
@@ -13,10 +13,10 @@ const ChatProfiles = () => {
 
   return (
     <P.Profiles>
-      {profiles.map(profile => (
-        <P.Profile key={profile.id}>
-          <img src={profile.img_url} alt="프로필" />
-          <div>{profile.name}</div>
+      {profiles.map(({ id, img_url, name }) => (
+        <P.Profile key={id}>
+          <img src={img_url} alt="프로필" />
+          <div>{name}</div>
         </P.Profile>
       ))}
     </P.Profiles>
