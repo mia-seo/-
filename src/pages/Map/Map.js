@@ -1,21 +1,19 @@
 import React, { useEffect, useState } from "react";
-import Location from "./Location";
+import { useNavigate } from "react-router-dom";
 import * as M from "./Map.styles";
-import "../../styles/reset.css";
 
 const Map = () => {
   const [items, setItems] = useState([]);
-  const [category, setCategory] = useState("한식");
-  const [latitude, setLatitude] = useState(37.506307228504966);
-  const [longitude, setLongitude] = useState(127.05371643215041);
-  const [name, setName] = useState("");
+  const [category, setCategory] = useState("전체");
+  const navigate = useNavigate();
 
   // 아이템의 좌표 설정해주고 props로 location에 넘겨줌
-  const addMapPoint = (lat, lon, name) => {
-    setLatitude(lat);
-    setLongitude(lon);
-    setName(name);
-  };
+
+  // const addMapPoint = (lat, lon, name) => {
+  //   setLatitude(lat);
+  //   setLongitude(lon);
+  //   setName(name);
+  // };
 
   //mockdata불러오기
   useEffect(() => {
@@ -29,6 +27,10 @@ const Map = () => {
     setCategory(cateName);
   };
 
+  const toDetail = id => {
+    navigate(`/detail`);
+  };
+
   return (
     <M.Container>
       <M.Fiter>
@@ -36,7 +38,7 @@ const Map = () => {
           {CATEGORYS.map((i, index) => {
             return (
               <M.categoryButton
-                props={i.name}
+                primary={category === i.name}
                 key={index}
                 onClick={() => {
                   addCategory(i.name);
@@ -49,9 +51,6 @@ const Map = () => {
         </div>
       </M.Fiter>
       <M.ContainerBox>
-        <M.Inner>
-          <Location latitude={latitude} longitude={longitude} name={name} />
-        </M.Inner>
         <M.List>
           {items.map((i, index) => {
             if (category === i.category) {
@@ -59,10 +58,34 @@ const Map = () => {
                 <M.Lists
                   key={index}
                   data-latitude={i.latitude}
-                  onClick={() => addMapPoint(i.latitude, i.longitude, i.name)}
+                  onClick={() => {
+                    toDetail(i.id);
+                  }}
                 >
                   <M.ItemImg src="/images/cake.jpg" />
                   <M.ItemDec>
+                    <p>{index}</p>
+                    <M.ItmeInfo primary>상호명 : {i.name}</M.ItmeInfo>
+                    <M.ItmeInfo>주소 : {i.address}</M.ItmeInfo>
+                    <M.ItmeInfo>전화번호 : {i.Tel}</M.ItmeInfo>
+                    <M.ItmeInfo>대표메뉴 : {i.smenu}</M.ItmeInfo>
+                    <M.ItmeInfo>카테고리 : {i.category}</M.ItmeInfo>
+                    <M.ItmeInfo>가격대 : 1만원 대</M.ItmeInfo>
+                  </M.ItemDec>
+                </M.Lists>
+              );
+            } else if (category === "전체") {
+              return (
+                <M.Lists
+                  key={index}
+                  data-latitude={i.latitude}
+                  onClick={() => {
+                    toDetail(i.id);
+                  }}
+                >
+                  <M.ItemImg src="/images/cake.jpg" />
+                  <M.ItemDec>
+                    <p>{index}</p>
                     <M.ItmeInfo primary>상호명 : {i.name}</M.ItmeInfo>
                     <M.ItmeInfo>주소 : {i.address}</M.ItmeInfo>
                     <M.ItmeInfo>전화번호 : {i.Tel}</M.ItmeInfo>
@@ -83,6 +106,7 @@ const Map = () => {
 export default Map;
 
 const CATEGORYS = [
+  { name: "전체" },
   { name: "한식" },
   { name: "중식" },
   { name: "양식" },

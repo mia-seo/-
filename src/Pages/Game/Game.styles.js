@@ -13,7 +13,7 @@ export const GameBtn = styled.a`
   margin: 20px 0px 30px 0px;
   border: 1px solid black;
   border-radius: 10px;
-  background-color: white;
+  background-color: rgba(255, 97, 0, 0.3);
   font-size: 100px;
   text-align: center;
   line-height: 700px;
@@ -22,6 +22,6 @@ export const GameBtn = styled.a`
   cursor: pointer;
 
   &:hover {
-    background-color: rgba(255, 97, 0, 0.4);
+    background-color: rgba(255, 97, 0, 0.8);
   }
 `;
