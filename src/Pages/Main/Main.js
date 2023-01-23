@@ -1,8 +1,11 @@
 import React, { useState } from "react";
-import Game from "../Game/Game";
+import styled from "styled-components";
 import Map from "../Map/Map";
+import Game from "../Game/Game";
 import Party from "../Party/Party";
 import * as M from "./Main.styles";
+// import Game from "../../Components/Nav/Mainchild/Game";
+// import Party from "../../Components/Nav/Mainchild/Party";
 
 const Main = () => {
   const [categori, setCategori] = useState("파티원 구함");
