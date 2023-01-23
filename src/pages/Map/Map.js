@@ -1,20 +1,19 @@
 import React, { useEffect, useState } from "react";
-import Location from "./Location";
+import { useNavigate } from "react-router-dom";
 import * as M from "./Map.styles";
 
 const Map = () => {
   const [items, setItems] = useState([]);
   const [category, setCategory] = useState("한식");
-  const [latitude, setLatitude] = useState(37.506307228504966);
-  const [longitude, setLongitude] = useState(127.05371643215041);
-  const [name, setName] = useState("");
+  const navigate = useNavigate();
 
   // 아이템의 좌표 설정해주고 props로 location에 넘겨줌
-  const addMapPoint = (lat, lon, name) => {
-    setLatitude(lat);
-    setLongitude(lon);
-    setName(name);
-  };
+
+  // const addMapPoint = (lat, lon, name) => {
+  //   setLatitude(lat);
+  //   setLongitude(lon);
+  //   setName(name);
+  // };
 
   //mockdata불러오기
   useEffect(() => {
@@ -26,6 +25,10 @@ const Map = () => {
   // 카테고리 이름 state
   const addCategory = cateName => {
     setCategory(cateName);
+  };
+
+  const toDetail = id => {
+    navigate(`/detail`);
   };
 
   return (
@@ -48,9 +51,6 @@ const Map = () => {
         </div>
       </M.Fiter>
       <M.ContainerBox>
-        <M.Inner>
-          <Location latitude={latitude} longitude={longitude} name={name} />
-        </M.Inner>
         <M.List>
           {items.map((i, index) => {
             if (category === i.category) {
@@ -58,7 +58,9 @@ const Map = () => {
                 <M.Lists
                   key={index}
                   data-latitude={i.latitude}
-                  onClick={() => addMapPoint(i.latitude, i.longitude, i.name)}
+                  onClick={() => {
+                    toDetail(i.id);
+                  }}
                 >
                   <M.ItemImg src="/images/cake.jpg" />
                   <M.ItemDec>

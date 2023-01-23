@@ -62,11 +62,11 @@ const Location = ({ longitude, latitude, name }) => {
     <div
       style={{
         width: "100%",
-        height: "100px",
+        height: "100%",
         display: "inline-block",
       }}
     >
-      <div id="map" style={{ width: "100%", height: "800px" }} />
+      <div id="map" style={{ width: "100%", height: "400px" }} />
     </div>
   );
 };
