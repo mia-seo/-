@@ -31,15 +31,15 @@ export const CarouselContainer = styled.div`
 
 export const Profiles = styled.div`
   ${props => props.theme.variables.flex("", "", "")};
-  /* transform: translate(${props => props.changePx}vw); */
   gap: 19px;
   transition: transform 1s;
 `;
 
 export const Profile = styled.div`
-  ${props => props.theme.variables.wh("20vw", "30vh")};
+  ${props => props.theme.variables.wh("15vw", "30vh")};
   ${props => props.theme.variables.flex("column", "space-between", "center")};
   ${props => props.theme.style.radius};
+  flex-shrink: 0;
   background-color: ${props => props.theme.style.lightTomato};
 
   img {

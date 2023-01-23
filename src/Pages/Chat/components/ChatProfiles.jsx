@@ -7,12 +7,12 @@ const ChatProfiles = () => {
   const [profiles, setProfiles] = useState([]);
   const [px, setPx] = useState(0);
 
-  const CARDWITH = 11.3;
+  const CARDWITH = 16;
   const overFlowValue =
-    profiles.length < 10 ? 0 : (profiles.length - 9) * CARDWITH;
+    profiles.length < 6 ? 0 : (profiles.length - 6) * CARDWITH;
 
   const handleClickLeft = () => {
-    if (px <= -overFlowValue) {
+    if (px < 0) {
       setPx(prev => prev + CARDWITH);
     }
   };
