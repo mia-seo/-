@@ -6,7 +6,7 @@ const variables = {
     height: ${h};
   `,
 
-  flex: (direction, justify, align) => `
+  flex: (direction = "row", justify = "", align = "") => `
     display: flex;
     flex-direction: ${direction};
     justify-content: ${justify};
