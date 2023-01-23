@@ -21,7 +21,7 @@ export const TitleInput = styled.input`
 `;
 
 export const Btn = styled.button`
-  ${props => props.theme.variables.wh("8vw", "60%")}
+  ${props => props.theme.variables.wh("6vw", "60%")}
   ${props => props.theme.style.radius};
   background-color: white;
   color: ${props => props.theme.style.tomato};
@@ -34,4 +34,13 @@ export const Toggle = styled(Btn)`
   color: ${props => (props.isComplited ? "white" : props.theme.style.tomato)};
   background-color: ${props =>
     props.isComplited ? props.theme.style.tomato : "white"};
+`;
+
+export const Exit = styled.button`
+  ${props => props.theme.variables.wh("3vw", "60%")};
+  background-color: white;
+  color: ${props => props.theme.style.tomato};
+  border: none;
+  border-radius: 50%;
+  font-size: 20px;
 `;

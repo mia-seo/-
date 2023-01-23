@@ -1,6 +1,9 @@
 import React from "react";
 import { useEffect } from "react";
+// import io from "socket.io-client";
 import * as C from "./Chatting.styles";
+
+// const socket = io();
 
 const Chatting = () => {
   useEffect(() => {

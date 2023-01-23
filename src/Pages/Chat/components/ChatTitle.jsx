@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import * as T from "./ChatTitle.styles";
 
 const ChatTitle = () => {
@@ -13,6 +14,12 @@ const ChatTitle = () => {
     setIsTrue({ ...isTrue, [id]: !isTrue[id] });
   };
 
+  const navigate = useNavigate();
+
+  const goToMain = () => {
+    navigate("/");
+  };
+
   return (
     <T.Title>
       <label htmlFor="title">방이름 : </label>
@@ -23,6 +30,7 @@ const ChatTitle = () => {
       <T.Toggle id="status" onClick={changeBoolean} isComplited={isTrue.status}>
         {isTrue.status ? "주문 완료" : "주문 대기"}
       </T.Toggle>
+      <T.Exit onClick={goToMain}>X</T.Exit>
     </T.Title>
   );
 };

@@ -30,6 +30,7 @@ export const ChatHeader = styled.div`
 
 export const ChatBody = styled.div`
   margin: 5px 0;
+  background-color: ${props => props.theme.style.lightGray};
 `;
 
 export const Bold = styled.span`
