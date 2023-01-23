@@ -3,7 +3,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Main from "./Pages/Main/Main";
 import Nav from "./Components/Nav/Nav";
 import Chat from "./Pages/Chat/Chat";
-import DetailPage from "./Pages/Map/DetailPage";
+import DetailPage from "./Pages/Map/Components/DetailPage.jsx";
 
 export default function Router() {
   return (
