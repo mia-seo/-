@@ -11,7 +11,7 @@ export const Container = styled.div`
 `;
 export const Fiter = styled.ul`
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   width: 1300px;
   margin-bottom: 10px;
 
