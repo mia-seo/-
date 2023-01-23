@@ -11,7 +11,7 @@ export const Container = styled.div`
 `;
 export const Fiter = styled.ul`
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   width: 1300px;
   margin-bottom: 10px;
 
@@ -25,7 +25,7 @@ export const Fiter = styled.ul`
 export const categoryButton = styled.button`
   width: 80px;
   height: 40px;
-  background-color: rgba(255, 97, 0, 0.2);
+  background-color: ${props => (props.primary ? "rgba(255,97,0,05)" : "white")};
   margin: 0px 10px 0px 10px;
   border-radius: 10px;
   border: 1px solid rgba(0, 0, 0, 0.1);

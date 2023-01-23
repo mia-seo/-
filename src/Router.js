@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Main from "./Pages/Main/Main";
 import Nav from "./Components/Nav/Nav";
 import Chat from "./Pages/Chat/Chat";
+import DetailPage from "./Pages/Map/Components/DetailPage.jsx";
 
 export default function Router() {
   return (
@@ -11,6 +12,7 @@ export default function Router() {
       <Routes>
         <Route path="/" element={<Main />} />
         <Route path="/chat" element={<Chat />} />
+        <Route path="/detail" element={<DetailPage />} />
       </Routes>
     </BrowserRouter>
   );
