@@ -20,7 +20,7 @@ const ChatTitle = () => {
       <T.Btn id="modify" onClick={changeBoolean}>
         {isTrue.modify ? "수정 완료" : "수정"}
       </T.Btn>
-      <T.Toggle id="status" onClick={changeBoolean}>
+      <T.Toggle id="status" onClick={changeBoolean} isComplited={isTrue.status}>
         {isTrue.status ? "주문 완료" : "주문 대기"}
       </T.Toggle>
     </T.Title>

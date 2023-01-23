@@ -10,7 +10,7 @@ export const Title = styled.form`
 `;
 
 export const TitleInput = styled.input`
-  ${props => props.theme.variables.wh("60vw", "70%")}
+  ${props => props.theme.variables.wh("65vw", "70%")}
   ${props => props.theme.style.radius};
   padding: 20px;
   font-size: 20px;
@@ -23,14 +23,15 @@ export const TitleInput = styled.input`
 export const Btn = styled.button`
   ${props => props.theme.variables.wh("8vw", "60%")}
   ${props => props.theme.style.radius};
-  background-color: ${props => props.theme.style.tomato};
-  color: white;
+  background-color: white;
+  color: ${props => props.theme.style.tomato};
   font-weight: bold;
   font-size: 18px;
   border: none;
 `;
 
 export const Toggle = styled(Btn)`
-  background-color: white;
-  color: ${props => props.theme.style.tomato};
+  color: ${props => (props.isComplited ? "white" : props.theme.style.tomato)};
+  background-color: ${props =>
+    props.isComplited ? props.theme.style.tomato : "white"};
 `;
