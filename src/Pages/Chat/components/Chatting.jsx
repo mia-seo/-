@@ -1,7 +1,11 @@
 import React from "react";
+import { useEffect } from "react";
 import * as C from "./Chatting.styles";
 
 const Chatting = () => {
+  useEffect(() => {
+    fetch();
+  }, []);
   return (
     <C.ChatBox>
       <C.Chat>
@@ -19,7 +23,7 @@ const Chatting = () => {
       </C.Chat>
       <C.TextBox>
         <input type="text" />
-        <button>버튼</button>
+        <button>입력</button>
       </C.TextBox>
     </C.ChatBox>
   );

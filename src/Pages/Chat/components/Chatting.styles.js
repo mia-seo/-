@@ -61,5 +61,7 @@ export const TextBox = styled.form`
     border: none;
     border-bottom-right-radius: 10px;
     font-size: 20px;
+    font-weight: bold;
+    color: ${props => props.theme.style.tomato};
   }
 `;

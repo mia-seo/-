@@ -7,7 +7,7 @@ const ChatProfiles = () => {
   const [profiles, setProfiles] = useState([]);
   const [px, setPx] = useState(0);
 
-  const CARDWITH = 10.5;
+  const CARDWITH = 11.3;
   const overFlowValue =
     profiles.length < 10 ? 0 : (profiles.length - 9) * CARDWITH;
 

@@ -32,7 +32,7 @@ export const CarouselContainer = styled.div`
 export const Profiles = styled.div`
   ${props => props.theme.variables.flex("", "", "")};
   /* transform: translate(${props => props.changePx}vw); */
-  gap: 10px;
+  gap: 19px;
   transition: transform 1s;
 `;
 
