@@ -14,16 +14,25 @@ function Party() {
 
   return (
     <P.CardFlex>
-      {roomData.map(item => (
-        <EmptyCard
-          key={item.room_id}
-          room_name={item.room_name}
-          room_order_status_id={item.room_order_status_id}
-          user_id={item.user_id}
-          map_categoris={item.map_categoris}
-          user_profile_img={item.user_profile_img}
-        />
-      ))}
+      {roomData.map(
+        ({
+          room_id,
+          room_name,
+          room_order_status_id,
+          user_id,
+          map_categoris,
+          user_profile_img,
+        }) => (
+          <EmptyCard
+            key={room_id}
+            room_name={room_name}
+            room_order_status_id={room_order_status_id}
+            user_id={user_id}
+            map_categoris={map_categoris}
+            user_profile_img={user_profile_img}
+          />
+        )
+      )}
       <CreateCard />
     </P.CardFlex>
   );
