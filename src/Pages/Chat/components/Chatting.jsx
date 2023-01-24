@@ -1,14 +1,21 @@
 import React from "react";
 import { useEffect, useState } from "react";
-// import { io } from "socket.io-client";
+import { io } from "socket.io-client";
 import * as C from "./Chatting.styles";
 
-// const socket = io.connect("http://localhost:3000");
+const socket = io.connect("http://localhost:3000");
 
 const Chatting = () => {
   const [user, setUser] = useState([]);
   const [inputValue, setInputValue] = useState([]);
-  const [chatList, setChatList] = useState([]);
+  // const [chatList, setChatList] = useState([]);
+  const [item, setItem] = useState({
+    id: "",
+    name: "",
+    msg: "",
+    time: "",
+    img: "",
+  });
 
   const handleChangeInput = e => {
     setInputValue(e.target.value);
@@ -20,33 +27,43 @@ const Chatting = () => {
       .then(res => setUser(res[0]));
   }, []);
 
-  // const [params, setParams] = useState([
-  //   {
-  //     user_name: "",
-  //     img: "",
-  //     msg: "",
-  //   },
-  // ]);
-
   const handleSubmitInput = e => {
     e.preventDefault();
-    setChatList([...chatList, inputValue]);
-    // socket.emit("chatting", () => params);
+    // setChatList([...chatList, inputValue]);
+    send();
+    socket.on("chatting", data => {
+      setItem(...item, {
+        id: data.id,
+        name: data.name,
+        msg: data.msg,
+        time: data.time,
+        img: data.img,
+      });
+    });
     setInputValue("");
+  };
+
+  const send = () => {
+    const param = {
+      name: user.name,
+      msg: inputValue,
+      img: user.img_url,
+    };
+    socket.emit("chatting", param);
   };
 
   return (
     <C.Chatting>
       <C.ChatContainer>
-        {chatList.map((li, index) => (
-          <C.ChatList key={index}>
-            <img src={user.img_url} alt="프로필" />
+        {item.map(({ id, name, msg, time, img }) => (
+          <C.ChatList key={id}>
+            <img src={img} alt="프로필" />
             <C.Chat>
               <C.ChatHeader>
-                <C.Bold>{user.name}</C.Bold>
-                <C.Small>시간시간</C.Small>
+                <C.Bold>{name}</C.Bold>
+                <C.Small>{time}</C.Small>
               </C.ChatHeader>
-              <C.ChatContents>{li}</C.ChatContents>
+              <C.ChatContents>{msg}</C.ChatContents>
             </C.Chat>
           </C.ChatList>
         ))}

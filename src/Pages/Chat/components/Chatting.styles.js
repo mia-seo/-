@@ -6,9 +6,9 @@ export const Chatting = styled.div`
 `;
 
 export const ChatContainer = styled.ul`
-  ${props => props.theme.variables.wh("90vw", "30vh")};
+  ${props => props.theme.variables.wh("90vw", "40vh")};
   background-color: white;
-  padding: 20px;
+  padding: 25px 20px;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
   overflow-x: scroll;
