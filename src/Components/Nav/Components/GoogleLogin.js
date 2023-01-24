@@ -4,12 +4,12 @@ function GoogleLogin() {
   const handleCallbackResponse = response => {
     localStorage.setItem("Token", response.credential);
   };
-  // console.log(response.credential);
+
+  console.log(process.env.REACT_APP_GOOGLE_KEY);
   useEffect(() => {
     /*global google*/
     google.accounts.id.initialize({
-      client_id:
-        "732239070979-06gam29m0q3onpqri4989ec1pgf10mip.apps.googleusercontent.com",
+      client_id: process.env.REACT_APP_GOOGLE_KEY,
       callback: handleCallbackResponse,
     });
 
@@ -28,7 +28,6 @@ function GoogleLogin() {
       },
     });
   });
-  console.log(localStorage.getItem("Token"));
   return <div id="signInDiv"></div>;
 }
 export default GoogleLogin;
