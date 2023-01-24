@@ -1,20 +1,21 @@
 import styled from "styled-components";
 
-export const ChatBox = styled.div`
+export const Chatting = styled.div`
   ${props => props.theme.variables.wh("90vw", "40vh")};
   ${props => props.theme.variables.flex("column", "", "")};
 `;
 
-export const Chat = styled.ul`
+export const ChatContainer = styled.ul`
   ${props => props.theme.variables.wh("90vw", "30vh")};
   background-color: white;
   padding: 20px;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
+  overflow-x: scroll;
+`;
 
-  li {
-    display: flex;
-  }
+export const ChatList = styled.li`
+  display: flex;
 
   img {
     ${props => props.theme.variables.wh("32px", "32px")};
@@ -22,7 +23,7 @@ export const Chat = styled.ul`
   }
 `;
 
-export const ChatContents = styled.div`
+export const Chat = styled.div`
   ${props => props.theme.variables.flex("column", "", "")};
   padding: 0 10px;
 `;
@@ -31,9 +32,11 @@ export const ChatHeader = styled.div`
   ${props => props.theme.variables.flex("", "", "flex-end")};
 `;
 
-export const ChatBody = styled.div`
+export const ChatContents = styled.div`
   margin: 5px 0;
+  padding: 8px;
   background-color: ${props => props.theme.style.lightGray};
+  border-radius: 5px;
 `;
 
 export const Bold = styled.span`
