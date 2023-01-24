@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import styled from "styled-components";
 import Map from "../Map/Map";
 import Game from "../Game/Game";
 import Party from "../Party/Party";
@@ -7,7 +6,6 @@ import * as M from "./Main.styles";
 
 const Main = () => {
   const [categori, setCategori] = useState("파티원 구함");
-  const [isTag, setIsTag] = useState(undefined);
   return (
     <div>
       <M.CategoriTab>

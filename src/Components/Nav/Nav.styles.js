@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Nav = styled.div`
   ${props => props.theme.variables.flex("", "space-between", "center")};
-  height: 100px;
+  height: 80px;
   text-align: center;
   background-color: white;
 `;
