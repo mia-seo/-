@@ -14,7 +14,7 @@ function CreateCard() {
       <E.CraeteCard onClick={handleCreateModal}>
         <E.CraeteButton>+</E.CraeteButton>
       </E.CraeteCard>
-      {isModalStatus && <CreateRoomInfoModal />}
+      {isModalStatus && <CreateRoomInfoModal fn={handleCreateModal} />}
     </E.CreateCardLayout>
   );
 }

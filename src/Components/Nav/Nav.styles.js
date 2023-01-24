@@ -16,12 +16,13 @@ export const Logo = styled.div`
 
 export const Login = styled.button`
   margin: auto 30px;
-  padding: 10px;
+  padding: 8px 20px;
   color: white;
   background-color: ${props => props.theme.style.tomato};
-  font-size: 26px;
+  font-size: 20px;
+  font-weight: bold;
   border: none;
-  border-radius: 28px;
+  border-radius: 20px;
 
   &:hover {
     color: ${props => props.theme.style.tomato};
