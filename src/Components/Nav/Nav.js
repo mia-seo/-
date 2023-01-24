@@ -1,45 +1,20 @@
-import React from "react";
-import styled from "styled-components";
+import React, { useState } from "react";
+import LoginModal from "../Modal/LoginModal";
+import * as N from "./Nav.styles";
 
 function Nav() {
-  const Nav = styled.div`
-    display: flex;
-    justify-content: space-between;
-    text-align: center;
-    align-items: center;
-    height: 100px;
-    background-color: white;
-    border-bottom: 1px solid black;
-  `;
+  const [activeLoginModal, setActiveLogimModal] = useState(false);
 
-  const Logo = styled.div`
-    margin: auto 30px;
-    color: #ff6347;
-    font-size: 32px;
-    font-weight: bold;
-  `;
-
-  const Login = styled.button`
-    margin: auto 30px;
-    font-size: 26px;
-    border: none;
-    border-radius: 28px;
-    color: white;
-    background-color: #ff6347;
-    padding: 10px;
-    &:hover {
-      cursor: pointer;
-      background-color: white;
-      color: #ff6347;
-      border: 1px solid #ff6347;
-    }
-  `;
+  const handleLoginModal = () => {
+    setActiveLogimModal(prev => !prev);
+  };
 
   return (
-    <Nav>
-      <Logo>오점모</Logo>
-      <Login>로그인</Login>
-    </Nav>
+    <N.Nav>
+      <N.Logo>오점모?</N.Logo>
+      <N.Login onClick={handleLoginModal}>로그인</N.Login>
+      {activeLoginModal && <LoginModal fn={handleLoginModal} />}
+    </N.Nav>
   );
 }
 export default Nav;

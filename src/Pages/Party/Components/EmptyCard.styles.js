@@ -28,15 +28,25 @@ export const RoomUsers = styled.div`
   overflow-y: auto;
 `;
 
-export const CraeteCard = styled(Empty)`
-  ${props => props.theme.variables.flex("", "center", "center")}
+export const CraeteCard = styled.button`
+  border: none;
+  background-color: rgb(255, 97, 0, 0);
   font-size: 100px;
   color: ${props => props.theme.style.lightGray};
 `;
 
 export const CraeteButton = styled.div`
   text-align: center;
-  width: 110px;
+  width: 120px;
   border: 5px solid ${props => props.theme.style.lightGray};
   border-radius: 100%;
+`;
+
+export const CreateCardLayout = styled.div`
+  ${props => props.theme.variables.flex("", "center", "center")}
+  margin: 10px;
+  min-width: 31.8%;
+  background-color: rgb(255, 97, 0, 0.2);
+  border-radius: 10px;
+  border: 1px solid rgb(255, 97, 0, 0.2);
 `;
