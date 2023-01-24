@@ -5,13 +5,16 @@ export const ChatBox = styled.div`
   ${props => props.theme.variables.flex("column", "", "")};
 `;
 
-export const Chat = styled.div`
+export const Chat = styled.ul`
   ${props => props.theme.variables.wh("90vw", "30vh")};
   background-color: white;
-  display: flex;
   padding: 20px;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
+
+  li {
+    display: flex;
+  }
 
   img {
     ${props => props.theme.variables.wh("32px", "32px")};
