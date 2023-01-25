@@ -3,7 +3,11 @@ import { useEffect, useState } from "react";
 import { io } from "socket.io-client";
 import * as C from "./Chatting.styles";
 
-const socket = io.connect("http://localhost:3000");
+const socket = io("http://10.58.52.214:3000");
+
+socket.on("connect", msg => {
+  console.log("connection server");
+});
 
 const Chatting = () => {
   const [user, setUser] = useState([]);
@@ -31,7 +35,7 @@ const Chatting = () => {
     e.preventDefault();
     // setChatList([...chatList, inputValue]);
     send();
-    socket.on("chatting", data => {
+    socket.on("message", data => {
       setItem(...item, {
         id: data.id,
         name: data.name,
@@ -49,24 +53,26 @@ const Chatting = () => {
       msg: inputValue,
       img: user.img_url,
     };
-    socket.emit("chatting", param);
+    socket.emit("message", param);
   };
 
   return (
     <C.Chatting>
       <C.ChatContainer>
-        {item.map(({ id, name, msg, time, img }) => (
-          <C.ChatList key={id}>
-            <img src={img} alt="프로필" />
-            <C.Chat>
-              <C.ChatHeader>
-                <C.Bold>{name}</C.Bold>
-                <C.Small>{time}</C.Small>
-              </C.ChatHeader>
-              <C.ChatContents>{msg}</C.ChatContents>
-            </C.Chat>
-          </C.ChatList>
-        ))}
+        {item.length > 0
+          ? item.map(({ id, name, msg, time, img }) => (
+              <C.ChatList key={id}>
+                <img src={img} alt="프로필" />
+                <C.Chat>
+                  <C.ChatHeader>
+                    <C.Bold>{name}</C.Bold>
+                    <C.Small>{time}</C.Small>
+                  </C.ChatHeader>
+                  <C.ChatContents>{msg}</C.ChatContents>
+                </C.Chat>
+              </C.ChatList>
+            ))
+          : null}
       </C.ChatContainer>
       <C.TextBox onSubmit={handleSubmitInput}>
         <input type="text" value={inputValue} onChange={handleChangeInput} />
