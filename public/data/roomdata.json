@@ -1,13 +1,13 @@
 [
   {
     "room_id": 1,
-    "room_name": "중식 먹을 사람!",
+    "room_name": "프엔만 모여라!",
     "user_id": [
       { "id": 1, "nickname": "하평안", "user_profile_img": "./images/123.png" },
-      { "id": 2, "nickname": "홍길동", "user_profile_img": "./images/123.png" },
+      { "id": 2, "nickname": "서지연", "user_profile_img": "./images/123.png" },
       {
         "id": 3,
-        "nickname": "wecode1234",
+        "nickname": "배경민",
         "user_profile_img": "./images/123.png"
       }
     ],
@@ -16,32 +16,27 @@
   },
   {
     "room_id": 2,
-    "room_name": "일식 먹을 사람!",
+    "room_name": "백엔드 망해라!",
     "user_id": [
-      { "id": 4, "nickname": "푸들", "user_profile_img": "./images/123.png" },
-      { "id": 5, "nickname": "벡엔드", "user_profile_img": "./images/123.png" },
-      { "id": 6, "nickname": "프론트", "user_profile_img": "./images/123.png" }
+      { "id": 4, "nickname": "김승수", "user_profile_img": "./images/123.png" },
+      { "id": 5, "nickname": "김승기", "user_profile_img": "./images/123.png" },
+      { "id": 6, "nickname": "백종호", "user_profile_img": "./images/123.png" }
     ],
     "map_categoris": "미정",
     "room_order_status_id": "주문 대기"
   },
   {
     "room_id": 3,
-    "room_name": "한식 먹을 사람!",
+    "room_name": "비밀연애중 암호:1234!",
     "user_id": [
       {
         "id": 7,
-        "nickname": "기업협업",
+        "nickname": "백종호",
         "user_profile_img": "./images/123.png"
       },
       {
         "id": 8,
-        "nickname": "가기싫다",
-        "user_profile_img": "./images/123.png"
-      },
-      {
-        "id": 9,
-        "nickname": "취직할수 있을까",
+        "nickname": "김승수",
         "user_profile_img": "./images/123.png"
       }
     ],
@@ -50,27 +45,36 @@
   },
   {
     "room_id": 4,
-    "room_name": "멘토님과 같이 하는 식사",
+    "room_name": "41기사이드프로젝트팀이라적고제목글자제한확인중",
     "user_id": [
       {
+        "id": 9,
+        "nickname": "김승기",
+        "user_profile_img": "./images/123.png"
+      },
+      {
         "id": 10,
-        "nickname": "혼자해보는",
+        "nickname": "김승수",
         "user_profile_img": "./images/123.png"
       },
       {
         "id": 11,
-        "nickname": "케러셀",
+        "nickname": "서지연",
         "user_profile_img": "./images/123.png"
       },
       {
         "id": 12,
-        "nickname": "잘할 수 있을까?",
+        "nickname": "배경민",
         "user_profile_img": "./images/123.png"
       },
-      { "id": 13, "nickname": "나는", "user_profile_img": "./images/123.png" },
-      { "id": 14, "nickname": "최고야", "user_profile_img": "./images/123.png" }
+      {
+        "id": 13,
+        "nickname": "백종호",
+        "user_profile_img": "./images/123.png"
+      },
+      { "id": 14, "nickname": "하평안", "user_profile_img": "./images/123.png" }
     ],
     "map_categoris": "양식",
-    "room_order_status_id": "결재중"
+    "room_order_status_id": "주문 대기"
   }
 ]

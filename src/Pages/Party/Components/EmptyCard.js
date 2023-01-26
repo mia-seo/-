@@ -3,30 +3,36 @@ import { useNavigate } from "react-router-dom";
 import * as E from "./EmptyCard.styles";
 
 function EmptyCard({
-  room_id,
   room_name,
   room_order_status_id,
   user_id,
   map_categoris,
 }) {
   const navigate = useNavigate();
-  const goToChat = () => navigate("/chat");
-
+  const goToNotYet = () => navigate("/notyet");
   return (
-    <E.Empty key={room_id} onClick={goToChat}>
+    <E.Empty>
       <E.RoomInfo>제목 : {room_name}</E.RoomInfo>
-      <E.RoomInfo>인원수 :{user_id.length}명</E.RoomInfo>
-      <E.RoomInfo>주문상태 : {room_order_status_id}</E.RoomInfo>
-      <E.RoomInfo>카테고리 : {map_categoris}</E.RoomInfo>
+      <E.Banners>
+        {room_order_status_id == "주문 완료" ? (
+          <E.OrderSuccess>{room_order_status_id}</E.OrderSuccess>
+        ) : (
+          <E.OrderReady>{room_order_status_id}</E.OrderReady>
+        )}
+        <E.CategoryBanner>카테고리 : {map_categoris}</E.CategoryBanner>
+      </E.Banners>
       <E.RoomUsers>
-        참가자 :
-        {user_id.map(item => (
-          <E.RoomInfo key={item.room_id}>
-            <div>
-              <img src={item.user_profile_img} alt="img" />
-            </div>
-            <div>{item.nickname}</div>
-          </E.RoomInfo>
+        참가자 : {user_id.length}명
+        {user_id.map((item, idx) => (
+          <E.UserProfile key={idx}>
+            <E.UserInfo>
+              <div>
+                <img src={item.user_profile_img} alt="img" />
+              </div>
+              <div>{item.nickname}</div>
+            </E.UserInfo>
+            <E.Follow onClick={goToNotYet}>친구 추가 +</E.Follow>
+          </E.UserProfile>
         ))}
       </E.RoomUsers>
     </E.Empty>

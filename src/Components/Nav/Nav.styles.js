@@ -12,6 +12,10 @@ export const Logo = styled.div`
   color: ${props => props.theme.style.tomato};
   font-size: 32px;
   font-weight: bold;
+
+  &:hover {
+    cursor: pointer;
+  }
 `;
 
 export const Login = styled.button`
@@ -29,5 +33,22 @@ export const Login = styled.button`
     background-color: white;
     border: 1px solid ${props => props.theme.style.tomato};
     cursor: pointer;
+  }
+`;
+
+export const LoginUserInfo = styled.div`
+  ${props => props.theme.variables.flex("row", "center", "center")}
+  margin-right:40px;
+
+  p {
+    color: ${props => props.theme.style.tomato};
+    font-size: 22px;
+    font-weight: bold;
+    margin-left: 10px;
+  }
+
+  img {
+    ${props => props.theme.variables.wh("45px", "45px")}
+    border-radius: 100%;
   }
 `;

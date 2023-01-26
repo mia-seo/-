@@ -4,20 +4,25 @@ export const ModalOutLine = styled.div`
   ${props => props.theme.variables.wh("30vw", "35vh")}
   ${props => props.theme.style.radius};
   position: fixed;
-  top: 30%;
-  right: 38%;
+  top: 38vh;
+  font-weight: bold;
+  right: 34.4vw;
   background-color: white;
   border: 1px solid ${props => props.theme.style.tomato};
-  z-index: 1;
+  z-index: 2;
 `;
 
 export const ChoiceUserCount = styled.div`
   margin: 10px;
   text-align: end;
+  font-weight: bold;
   color: ${props => props.theme.style.tomato};
   input {
+    font-weight: bold;
+    margin: 0 2px;
+    padding: 3px 3px 0 3px;
     border: 1px solid ${props => props.theme.style.tomato};
-    ${props => props.theme.style.radius};
+    border-radius: 7px;
     width: 10%;
   }
 `;
@@ -38,25 +43,32 @@ export const CreateRoomHead = styled.div`
 export const title = styled.div`
   text-align: center;
   font-size: 20px;
+  font-weight: bold;
   margin: 20px 0;
   color: ${props => props.theme.style.tomato};
 
   input {
+    font-weight: bold;
+    padding: 2px 0 0 5px;
     border: 1px solid ${props => props.theme.style.tomato};
-    ${props => props.theme.style.radius};
+    border-radius: 5px;
     width: 70%;
     height: 25px;
   }
 `;
 
-export const SelectCategori = styled.div`
+export const SelectCategory = styled.div`
   margin: 10px;
+  font-weight: bold;
   color: ${props => props.theme.style.tomato};
   ${props => props.theme.variables.flex("row", "end", "center")}
 
   select {
+    margin: 0 2px;
+    color: tomato;
+    font-weight: bold;
     border: 1px solid ${props => props.theme.style.tomato};
-    ${props => props.theme.style.radius};
+    border-radius: 5px;
   }
 `;
 

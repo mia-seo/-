@@ -6,15 +6,22 @@ export const MenuTab = styled.div`
   overflow-x: hidden;
 `;
 
-export const CategoriTab = styled(MenuTab)`
+export const CategoryTab = styled(MenuTab)`
   font-size: 30px;
+
+  .changedColor {
+    background-color: tomato;
+    border: 1px solid white;
+    border-radius: 10px;
+    color: white;
+  }
 `;
 
 export const Tab = styled.ul`
   display: flex;
 `;
 
-export const CategoriTabLi = styled.li`
+export const CategoryTabLi = styled.li`
   margin: 10px;
   width: 100%;
   background-color: white;

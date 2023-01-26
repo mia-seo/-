@@ -1,24 +1,37 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Map from "../Map/Map";
 import Game from "../Game/Game";
 import Party from "../Party/Party";
 import * as M from "./Main.styles";
 
 const Main = () => {
-  const [categori, setCategori] = useState("파티원 구함");
+  const [category, setCategory] = useState("파티원 구함");
+  const [btnType, setbtnType] = useState("party");
+
+  const handleChangeBtnColor = type => {
+    setbtnType(type);
+  };
+
   return (
     <div>
-      <M.CategoriTab>
+      <M.CategoryTab>
         <M.Tab>
-          {CATEGORI_BUTTON.map((tab, idx) => (
-            <M.CategoriTabLi key={idx} onClick={() => setCategori(tab)}>
-              {tab}
-            </M.CategoriTabLi>
+          {CATEGORY_BUTTON.map((tab, idx) => (
+            <M.CategoryTabLi
+              key={idx}
+              className={`${btnType === tab.type ? "changedColor" : ""}`}
+              onClick={() => {
+                setCategory(tab.title);
+                handleChangeBtnColor(tab.type);
+              }}
+            >
+              {tab.title}
+            </M.CategoryTabLi>
           ))}
         </M.Tab>
-      </M.CategoriTab>
+      </M.CategoryTab>
       <M.MenuTab>
-        <div>{MAIN_CHILD[categori]}</div>
+        <div>{MAIN_CHILD[category]}</div>
       </M.MenuTab>
     </div>
   );
@@ -26,7 +39,11 @@ const Main = () => {
 
 export default Main;
 
-const CATEGORI_BUTTON = ["파티원 구함", "맛집 지도", "게 임"];
+const CATEGORY_BUTTON = [
+  { type: "party", title: "파티원 구함" },
+  { type: "map", title: "맛집 지도" },
+  { type: "game", title: "게 임" },
+];
 
 const MAIN_CHILD = {
   "파티원 구함": <Party />,
