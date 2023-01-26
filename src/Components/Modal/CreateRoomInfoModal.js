@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import * as M from "./CreateRoomInfoModal.styles";
 
 function CreateRoomInfoModal({ fn }) {
@@ -16,7 +16,7 @@ function CreateRoomInfoModal({ fn }) {
             <input />명
           </M.ChoiceUserCount>
 
-          <M.SelectCategori>
+          <M.SelectCategory>
             <div>카테고리 :</div>
             <div>
               <select>
@@ -25,7 +25,7 @@ function CreateRoomInfoModal({ fn }) {
                 ))}
               </select>
             </div>
-          </M.SelectCategori>
+          </M.SelectCategory>
         </M.UnderInfo>
       </div>
       <M.CreateButtonList>
@@ -43,6 +43,6 @@ const CREATEROOMINFO = [
   { id: 2, sub: "중식" },
   { id: 3, sub: "한식" },
   { id: 4, sub: "일식" },
-  { id: 5, sub: "인스턴스" },
+  { id: 5, sub: "인스턴트" },
   { id: 6, sub: "양식" },
 ];

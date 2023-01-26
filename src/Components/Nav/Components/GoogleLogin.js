@@ -1,11 +1,11 @@
 import React, { useEffect } from "react";
 
-function GoogleLogin() {
+function GoogleLogin({ fn }) {
   const handleCallbackResponse = response => {
     localStorage.setItem("Token", response.credential);
+    return fn();
   };
 
-  console.log(process.env.REACT_APP_GOOGLE_KEY);
   useEffect(() => {
     /*global google*/
     google.accounts.id.initialize({
@@ -26,8 +26,11 @@ function GoogleLogin() {
         "Content-Type": "application/json;charset=utf-8",
         Authorization: localStorage.getItem("Token"),
       },
-    });
-  });
+    })
+      .then(data => data.json())
+      .then(data => localStorage.setItem("accessToken", data.accessToken));
+  }, []);
+
   return <div id="signInDiv"></div>;
 }
 export default GoogleLogin;

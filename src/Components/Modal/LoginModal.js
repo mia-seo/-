@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import GoogleLogin from "../Nav/Components/GoogleLogin";
 import * as L from "./LoginModal.styles";
 import * as M from "./CreateRoomInfoModal.styles";
@@ -14,7 +14,7 @@ function LoginModal({ fn }) {
       </div>
 
       <L.GoogleLoginBtn>
-        <GoogleLogin />
+        <GoogleLogin fn={fn} />
       </L.GoogleLoginBtn>
     </M.ModalOutLine>
   );
