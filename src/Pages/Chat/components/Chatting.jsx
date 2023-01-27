@@ -49,6 +49,7 @@ const Chatting = () => {
 
   const send = () => {
     const param = {
+      id: user.id,
       name: user.name,
       msg: inputValue,
       img: user.img_url,
