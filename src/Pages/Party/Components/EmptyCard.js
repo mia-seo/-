@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { io } from "socket.io-client";
 import * as E from "./EmptyCard.styles";
 
-const socket = io("http://10.58.52.214:3000");
+const socket = io("http://10.58.52.208:3000");
 
 function EmptyCard({
   room_id,

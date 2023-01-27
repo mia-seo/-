@@ -1,38 +1,84 @@
 import React from "react";
 import { useEffect, useState } from "react";
-import { io } from "https://cdn.socket.io/4.3.2/socket.io.esm.min.js";
+import { io } from "socket.io-client";
 import * as C from "./Chatting.styles";
 
-const socket = io();
-console.log(socket);
+const socket = io("http://10.58.52.208:3000/chatting", {
+  path: "/chatting",
+  query: {
+    roomId: 13,
+    userId: 14,
+  },
+});
 
 const Chatting = () => {
   const [user, setUser] = useState([]);
+  const [inputValue, setInputValue] = useState([]);
+  // const [chatList, setChatList] = useState([]);
+  const [item, setItem] = useState({
+    id: "",
+    name: "",
+    msg: "",
+    time: "",
+    img: "",
+  });
+
+  const handleChangeInput = e => {
+    setInputValue(e.target.value);
+  };
+
   useEffect(() => {
     fetch("/Data/profiles.json")
       .then(res => res.json())
       .then(res => setUser(res[0]));
   }, []);
 
+  const handleSubmitInput = e => {
+    e.preventDefault();
+    // setChatList([...chatList, inputValue]);
+    send();
+    socket.on("chatting", data => {
+      setItem(...item, {
+        id: data.id,
+        name: data.name,
+        msg: data.msg,
+        time: data.time,
+        img: data.img,
+      });
+    });
+    setInputValue("");
+  };
+
+  const send = () => {
+    const param = {
+      name: user.name,
+      msg: inputValue,
+      img: user.img_url,
+    };
+    socket.emit("chatting", param);
+  };
+
   return (
-    <C.ChatBox>
-      <C.Chat>
-        <li>
-          <img src={user.img_url} alt="프로필" />
-          <C.ChatContents>
-            <C.ChatHeader>
-              <C.Bold>{user.name}</C.Bold>
-              <C.Small>시간시간</C.Small>
-            </C.ChatHeader>
-            <C.ChatBody>dilkhj</C.ChatBody>
-          </C.ChatContents>
-        </li>
-      </C.Chat>
-      <C.TextBox>
-        <input type="text" />
+    <C.Chatting>
+      <C.ChatContainer>
+        {item.map(({ id, name, msg, time, img }) => (
+          <C.ChatList key={id}>
+            <img src={img} alt="프로필" />
+            <C.Chat>
+              <C.ChatHeader>
+                <C.Bold>{name}</C.Bold>
+                <C.Small>{time}</C.Small>
+              </C.ChatHeader>
+              <C.ChatContents>{msg}</C.ChatContents>
+            </C.Chat>
+          </C.ChatList>
+        ))}
+      </C.ChatContainer>
+      <C.TextBox onSubmit={handleSubmitInput}>
+        <input type="text" value={inputValue} onChange={handleChangeInput} />
         <button>입력</button>
       </C.TextBox>
-    </C.ChatBox>
+    </C.Chatting>
   );
 };
 
